@@ -1,0 +1,13 @@
+---
+- hosts: 4iglance
+  become: true
+  become_method: sudo
+  become_user: root
+  vars:
+    user: admin
+  tasks:
+  - name: Create user
+    user: name="{{ user }}" state=present
+  
+  - name: Set password for the user
+    shell: echo "admin123" | passwd "{{ user }}" --stdin

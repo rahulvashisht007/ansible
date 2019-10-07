@@ -15,5 +15,5 @@
     
   - name: debug
     debug:
-      msg: {{ user }} has been added successfully.
+      msg: \"{{ user }}\" has been added successfully.
     

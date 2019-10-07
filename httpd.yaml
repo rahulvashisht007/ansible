@@ -8,6 +8,13 @@
   tasks:
   - name: Create user
     user: name="{{ user }}" state=present
+    register: output
   
   - name: Set password for the user
     shell: echo "admin123" | passwd "{{ user }}" --stdin
+    
+  - name: debug
+    debug:
+      msg: "{{ user }}" has been added successfully.
+    when: output.rc == 0
+    

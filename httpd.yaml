@@ -12,7 +12,7 @@
     register: output
   
   - name: Set password for the user
-    shell: echo "admin123" | passwd "{{ user }}" --stdin
+    shell: echo "{PASSWORD}" | passwd "{{ user }}" --stdin
     
   - name: debug
     debug:

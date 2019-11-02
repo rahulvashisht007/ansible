@@ -4,8 +4,8 @@
   become: yes
   become_method: sudo
   become_user: root
-  vars:
-    user: admin
+  # vars:
+  #  user: admin
   tasks:
   - name: Create user
     user: name="{{ user }}" state=present
